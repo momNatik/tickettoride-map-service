@@ -1,3 +1,3 @@
-import LOGGING from "../../tickettoride-backend-common/src/logging/log.mjs";
+import LOGGING from "@common/logging/log.js";
 
 LOGGING.ShowStartInfo("MAP_SERVICE_NAME");

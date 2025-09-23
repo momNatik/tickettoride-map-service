@@ -4,15 +4,18 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch --env-file=../../.env ./dist/index.js"
+    "exec": "tsc --build && node --loader=ts-paths-esm-loader --env-file=../../.env --no-warnings dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
+  "dependencies": {
+    "ts-paths-esm-loader": "^1.4.3"
+  },
   "devDependencies": {
-    "@types/node": "^24.3.1"
+    "@types/node": "^24.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   }
 }
