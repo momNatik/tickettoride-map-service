@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "exec": "tsc --build && node --loader=ts-paths-esm-loader --env-file=../../.env --no-warnings dist/index.js"
+    "build": "tsc --build"
   },
   "keywords": [],
   "author": "",

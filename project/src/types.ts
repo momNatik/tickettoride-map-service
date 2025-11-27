@@ -1,4 +1,4 @@
-enum TransitionColor {
+export enum TransitionColor {
     White,
     Yellow,
     Black,
@@ -10,7 +10,7 @@ enum TransitionColor {
     Grey
 }
 
-enum PlayerColor {
+export enum PlayerColor {
     Yellow,
     Pink,
     Blue,
@@ -21,24 +21,41 @@ enum PlayerColor {
 
 // серый цвет означает отсуствие цвета. Должны ли мы записать его в enum к остальным цветам или сделать сущность по типу IsColored которая будет хранить два состояния - цветной переход или нет.
 
-class Coordinates {
-	X: number;
-	Y: number;
+type Coordinates = {
+    X: number;
+    Y: number;
 }
 
-class City {
-	Point: Coordinates;
-	Name: string;
+type CityId = {};
+type PlayerId = {};
+
+type City = {
+    Id: CityId;
+    Point: Coordinates;
+    Name: string;
 }
 
-class Transition {
-	City0: City;
-	City1: City;
-	SegmentsCount: number;
-	Color: TransitionColor;
+type Transition = {
+    CityId0: CityId;
+    CityId1: CityId;
+    SegmentsCount: number;
+    Color: TransitionColor;
 }
 
-export class Map {
-	Cities: City[];
-	Transitions: Transition[];
+export type Map = {
+    Cities: City[];
+    Transitions: Transition[];
+}
+
+
+function abc() {
+    const city: City = {
+        Id: 2,
+        Point: { X: 1, Y: 2 },
+        Name: "string"
+    };
+
+    const playerId: PlayerId = {};
+    city.Id = playerId;
+
 }
