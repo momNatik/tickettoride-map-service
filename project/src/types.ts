@@ -26,18 +26,18 @@ type Coordinates = {
     Y: number;
 }
 
-type CityId = {};
-type PlayerId = {};
+// type CityId = {};
+// type PlayerId = {};
 
-type City = {
-    Id: CityId;
+export type City = {
+    Id: number;
     Point: Coordinates;
     Name: string;
 }
 
-type Transition = {
-    CityId0: CityId;
-    CityId1: CityId;
+export type Transition = {
+    CityId0: number;
+    CityId1: number;
     SegmentsCount: number;
     Color: TransitionColor;
 }
@@ -48,18 +48,22 @@ export type Map = {
 }
 
 
-function abc() {
-    const city: City = {
-        Id: 2,
-        Point: { X: 1, Y: 2 },
-        Name: "string"
-    };
+// function abc() {
+//     const city: City = {
+//         Id: 2,
+//         Point: { X: 1, Y: 2 },
+//         Name: "string"
+//     };
 
-    const playerId: PlayerId = {};
-    city.Id = playerId;
+//     const playerId: PlayerId = {};
+//     city.Id = playerId;
 
-}
+// }
 
+// TODO: numberOfCities > citiesCount
+// TODO: paletteType > landscapeTheme: enum
+// TODO: add param palette to LandscapeParams
+// TODO: move width, heigth to LandscapeParams
 export interface GameParams {
     gameId: string,
     numberOfCities: number;
