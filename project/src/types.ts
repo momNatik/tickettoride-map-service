@@ -59,3 +59,13 @@ function abc() {
     city.Id = playerId;
 
 }
+
+export interface GameParams {
+    gameId: string,
+    numberOfCities: number;
+    numberOfPlayers: number;
+    playWithComputer: boolean;
+    paletteType: string;
+    width: number;
+    height: number;
+}

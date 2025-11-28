@@ -1,14 +1,18 @@
-import { Map, TransitionColor } from "./types.js";
+import { Map, TransitionColor, GameParams } from "./types.js";
 
 export default { Create };
+export type { GameParams };
 
-function Create(params: string, landscape: string) {
+function Create(params: GameParams, landscape: string) {
     const map = CreateMap(params, landscape);
     const svgText = Render(map);
     return svgText;
 }
 
-function CreateMap(params: string, landscape: string): Map {
+function CreateMap(params: GameParams, landscape: string): Map {
+    const numberOfCities = params.numberOfCities;
+    console.log("Params: ", params)
+    CreateCities(numberOfCities);
     const map: Map = {
         Cities: [
             {
@@ -55,4 +59,8 @@ function Render(map: Map) {
 </svg>
 `;
     return svgText;
+}
+
+function CreateCities(citiesCount: number) {
+
 }
